@@ -1,10 +1,6 @@
 import css from "./Feedback.module.css";
 
-const Feedback = ({ type, total }) => {
-  const positiveFeedback = Math.round(
-    ((type.good + type.neutral) / total) * 100
-  );
-
+const Feedback = ({ type, total, positive }) => {
   return (
     <>
       <ul className={css.list}>
@@ -13,7 +9,7 @@ const Feedback = ({ type, total }) => {
         <li>Bad: {type.bad}</li>
       </ul>
       <p className={css.item}>Total: {total}</p>
-      <p className={css.item}>Positive: {positiveFeedback}%</p>
+      <p className={css.item}>Positive: {positive}%</p>
     </>
   );
 };
